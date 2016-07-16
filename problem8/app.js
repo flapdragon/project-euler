@@ -24,6 +24,8 @@
 // 71636269561882670428252483600823257530420752963450
 // Find the thirteen adjacent digits in the 1000-digit number that have the greatest product. What is the value of this product?
 
+// post - https://projecteuler.net/thread=8&page=9#248783
+
 // methods
 // will finding the greatest sum return the same digits that return the greatest product?
 // slice()
