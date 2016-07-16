@@ -4,9 +4,11 @@
 // 2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.
 // What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
 
-// 232792560
+// answer: 232792560
 
-// start at base number (20) times base number - 1 (19) i guess, because that will be the first option that will be divisible by the first two numbers
+// my first method, pretty much i try to solve everything with loops because i don't know the math.
+// ifs start with the most exclusive if cases, and omits what would be duplicate ifs from 1 - 10
+// increment (i) start at base number (20) times base number - 1 (19) i guess, because that will be the first option that will be divisible by the first two numbers
 console.time("Array initialize");
 var c = true,
     i = 20 * 19;
@@ -41,7 +43,7 @@ while (c === true) {
 console.timeEnd("Array initialize");
 // ~1026.120ms
 
-// this is an ungodly slow method
+// method no. 2, i was looking for alternatives to nested ifs. this is an ungodly slow method
 // console.time("Array initialize");
 // var c = true,
 //     i = 20;
@@ -54,11 +56,11 @@ console.timeEnd("Array initialize");
 // console.timeEnd("Array initialize");
 // this is slow as shit, i proved it
 
-// using prime factorization and logarithms
+// method based on project euler guide. using prime factorization and logarithms. i'm not sure his method (below) checks for prime.
+// significantly faster than method no. 1. also can take in a number and work dynamically.
 console.time("Array initialize");
 var k = 20,
     n = 1,
-    ii = 1,
     a = 0,
     iToTheA;
 var check = true,
@@ -96,6 +98,7 @@ console.timeEnd("Array initialize");
 //     i=i+1 end while
 //     output N
 
+// just trying out the math in my head
 var test3 = 2 * 2 * 2 * 2;
 test3 = test3 * 3 * 3;
 test3 = test3 * 5;
@@ -105,18 +108,6 @@ test3 = test3 * 13;
 test3 = test3 * 17;
 test3 = test3 * 19;
 console.log(test3);
-
-// from https://www.thepolyglotdeveloper.com/2015/04/determine-if-a-number-is-prime-using-javascript/
-// it returns true for 4 - exterminate! i should probably comment on his site but ... then i'd have to sign up ...
-function isPrimeReturnsTrueFor4(value) {
-    var half = Math.round(value / 2);
-    for (var i = 2; i < half; i++) {
-        if (value % i === 0) {
-            return false;
-        }
-    }
-    return value > 1;
-}
 
 // from http://www.javascripter.net/faq/numberisprime.htm
 function isPrime(n) {
@@ -150,4 +141,16 @@ function leastFactor(n) {
         if (n%(i+24)==0) return i+24;
     }
     return n;
+}
+
+// from https://www.thepolyglotdeveloper.com/2015/04/determine-if-a-number-is-prime-using-javascript/
+// it returns true for 4 - exterminate! i should probably comment on his site but ... then i'd have to sign up ...
+function isPrimeReturnsTrueFor4(value) {
+    var half = Math.round(value / 2);
+    for (var i = 2; i < half; i++) {
+        if (value % i === 0) {
+            return false;
+        }
+    }
+    return value > 1;
 }
