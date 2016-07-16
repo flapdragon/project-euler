@@ -25,6 +25,7 @@
 // Find the thirteen adjacent digits in the 1000-digit number that have the greatest product. What is the value of this product?
 
 // methods
+// will finding the greatest sum return the same digits that return the greatest product?
 // slice()
 // substring()
 // substr()
@@ -85,6 +86,7 @@ console.timeEnd("greatest product 13 method 1");
 // greatest product 13 method 1: 0.640ms
 // test 2: 0.890ms, 1.066ms, 0.881ms, 0.895ms, 0.884ms, 0.919ms, 0.890ms, 1.047ms, 1.202ms, 1.137ms
 
+
 // 13 digits
 console.time("greatest product 13 method 2");
 function findGreatestProduct13V2(dig) {
@@ -133,3 +135,31 @@ console.timeEnd("greatest product 13 method 3");
 // greatest product 13 method 3: 0.965ms
 
 // there is no overview for this one. i am lost ... rudderless ...
+
+// 13 digits - use sum for comparison - fastest method
+console.time("greatest product 13 method 4");
+function findGreatestProduct13V4(dig) {
+  var len = num1000.length-(dig-1),
+    sliced,
+    sumCurrent = 0,
+    sumGreatest = 0,
+    productGreatest = 1;
+  for (var i = 0; i < len; i++) {
+    productCurrent = 1;
+    sliced = num1000.slice(i, i+dig);
+    // productCurrent = sliced[0] * sliced[1] * sliced[2] * sliced[3];
+    for (var j =0; j < dig; j++) {
+      productCurrent += sliced[j];
+    }
+    if (productCurrent > productGreatest) {
+      for (var j =0; j < dig; j++) {
+        productGreatest *= sliced[j];
+      }
+    }
+    // console.log(sliced, productCurrent, productGreatest);
+  }
+  console.log(productGreatest);
+}
+findGreatestProduct13V1(13);
+console.timeEnd("greatest product 13 method 4");
+// greatest product 13 method 4: 0.582ms
