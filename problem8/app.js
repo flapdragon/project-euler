@@ -131,3 +131,5 @@ function findGreatestProduct13V3(dig) {
 findGreatestProduct13V3(13);
 console.timeEnd("greatest product 13 method 3");
 // greatest product 13 method 3: 0.965ms
+
+// there is no overview for this one. i am lost ... rudderless ...
