@@ -1,0 +1,22 @@
+{
+  "name": "project-euler",
+  "version": "1.0.0",
+  "description": "Working through Project Euler problem set. My pattern so far has been use loops to solve, then look at the problem guide, see the math, convert it to JavaScript and see a huge performance improvement.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/flapdragon/project-euler.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/flapdragon/project-euler/issues"
+  },
+  "homepage": "https://github.com/flapdragon/project-euler#readme",
+  "devDependencies": {
+    "http-server": "^0.9.0"
+  }
+}
