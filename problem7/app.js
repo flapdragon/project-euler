@@ -4,7 +4,7 @@
 // By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that the 6th prime is 13.
 // What is the 10 001st prime number?
 
-// 586152
+// 104743
 
 // my method 1
 console.time("10001st prime method 1");
@@ -21,6 +21,7 @@ while (primeCount < 10001) {
     i++;
 }
 console.timeEnd("10001st prime method 1");
+// 10001st prime method 1: 9.868ms
 
 // my method 2, based on overview solution
 // solution based on overview is about twice as fast because it is doing about half the work, skipping the evens
@@ -37,6 +38,7 @@ while (primeCount < 10001) {
     i += 2;
 }
 console.timeEnd("10001st prime method 2");
+// 10001st prime method 2: 4.438ms
 
 // problem 7 overview
 // limit=10001
