@@ -19,7 +19,7 @@
 // console.time("math.pow");
 // var squares = [];
 // for (var i = 0; i < 1000; i++) {
-//     squares[i] = Math.pow(i, i);
+//     squares[i] = Math.pow(i, 2);
 // }
 // console.timeEnd("math.pow");
 //
@@ -31,29 +31,11 @@
 // console.timeEnd("eye times eye");
 
 // results
-// i * i first
-// app.js:23 eye times eye: 0.178ms
-// app.js:30 math.pow: 0.256ms
-// app.js:23 eye times eye: 0.364ms
-// app.js:30 math.pow: 0.276ms
-// app.js:23 eye times eye: 0.161ms
-// app.js:30 math.pow: 0.196ms
-// app.js:23 eye times eye: 0.322ms
-// app.js:30 math.pow: 0.325ms
-// app.js:23 eye times eye: 0.088ms
-// app.js:30 math.pow: 0.338ms
-
-// math.pow first
-// app.js:23 math.pow: 0.286ms
-// app.js:30 eye times eye: 0.073ms
-// app.js:23 math.pow: 0.342ms
-// app.js:30 eye times eye: 0.124ms
-// app.js:23 math.pow: 0.328ms
-// app.js:30 eye times eye: 0.055ms
-// app.js:23 math.pow: 0.302ms
-// app.js:30 eye times eye: 0.054ms
-// app.js:23 math.pow: 0.429ms
-// app.js:30 eye times eye: 0.124ms
+// math.pow: 0.100ms <=> eye times eye: 0.052ms
+// math.pow: 0.106ms <=> eye times eye: 0.036ms
+// math.pow: 0.140ms <=> eye times eye: 0.057ms
+// math.pow: 0.130ms <=> eye times eye: 0.044ms
+// math.pow: 0.098ms <=> eye times eye: 0.037ms
 
 // i * i the winner! not that console.time is the most conclusive but still ...
 /********* performance of i * i vs math.pow END *********/
