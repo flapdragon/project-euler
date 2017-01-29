@@ -4,21 +4,23 @@
 // The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17.
 // Find the sum of all the primes below two million.
 
-var React = require('react')
-var ReactDOM = require('react-dom')
+const React = require('react')
+const ReactDOM = require('react-dom')
+const ReactRouter = require('react-router')
+const { Router, Route, hashHistory, IndexRoute } = ReactRouter
 
-var PrimesComponent = require('./PrimesComponent')
+const PrimesMain = require('./Primes/PrimesMain')
 
 // import PrimesComponent from './PrimesComponent.js'
 
-var App = function () {
-  return (
-    <div>
-      <PrimesComponent num='10' color='rebeccapurple' />
-      <PrimesComponent num='2000000' color='rebeccapurple' />
-    </div>
-  )
-}
+const App = () => (
+  <Router history={hashHistory}>
+    <Route path='/' component={PrimesMain}>
+      <IndexRoute component={PrimesMain} />
+      {/* <Route path='/primes' component={PrimesMain} /> */}
+    </Route>
+  </Router>
+)
 
 ReactDOM.render(<App />, document.getElementById('root'))
 
