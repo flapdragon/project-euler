@@ -1,0 +1,9 @@
+# ignore intellij idea files
+/.idea
+*.iml
+
+# ignore node_modules
+/node_modules
+
+# ignore bundles app
+/public
