@@ -1,3 +1,6 @@
-# ignore intellij idea files
+# Dependency directory
+node_modules
+
+# Ignore JetBrains files
 /.idea
 *.iml
