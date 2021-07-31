@@ -23,7 +23,7 @@ function original() {
   return s;
 }
 
-// Solution from Euler with some JavaScript bitwise thrown in to accomplish div or /.
+// Solution from Euler with some JavaScript bitwise thrown in to accomplish div or \.
 // The bitwise OR operator is faster than Math.floor but you don't even notice it at this magnitude, < 1000.
 // I had to go up to 1000000 before I saw a consistent difference.
 // So Math.floor is 100% fine for this problem at 1000.
@@ -54,7 +54,7 @@ console.log(original());
 console.log(sumDivisibleBy(3) + sumDivisibleBy(5) - sumDivisibleBy(15));
 
 // What I learned
-// 1. To get the sum of a consecutive series of number starting at 1 through p, the formula is (p * (p + 1)) / 2.
+// 1. To get the sum of a consecutive series of numbers starting at 1 through p, the formula is (p * (p + 1)) / 2.
 // I believe this is because using addition for sum of numbers through 10 it would be (1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10) = 55
 // and then someone figured out (10 * (10 + 1)) / 2 = 55.
 // I either never knew this formula or I forgot it long ago, along with chemistry and physics.
