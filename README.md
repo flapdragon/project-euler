@@ -45,5 +45,5 @@ Once the server is running open a browser and go to http://localhost:8080/proble
 
 |Problem|Solution|
 |---|---|
-|[Multiples of 3 or 5](https://projecteuler.net/problem=1)|[Solutions](problem-01)|
-|[Even Fibonacci numbers](https://projecteuler.net/problem=2)|[Solutions](problem-02)|
+|[Multiples of 3 or 5](https://projecteuler.net/problem=1)|[Solutions](problem-0001)|
+|[Even Fibonacci numbers](https://projecteuler.net/problem=2)|[Solutions](problem-0002)|

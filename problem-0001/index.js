@@ -12,7 +12,7 @@
 function original() {
   // I'm using var here. Wow. Meeeemorieeees.
   var s = 0;
-  // Iteration! Fuck yeah!
+  // Iteration! Yeah!
   for (var i=3; i < 1000; i++) {
     // If current item is divisble by 3 or 5 evenly
     if (i % 3 === 0 || i % 5 === 0) {
@@ -32,7 +32,7 @@ function original() {
 function sumDivisibleBy(n) {
   // Set target, < 1000
   const target = 999;
-  // Divide target by number to be divisible by, ignore remainder. Throw that shit away.
+  // Divide target by number to be divisible by, ignore remainder.
   const p = target / n | 0;
   // The sum is the divisible number n times target divided by n, named p, times p + 1, and divide that whole thing by 2.
   return n * (p * (p + 1)) / 2 | 0;
@@ -42,14 +42,14 @@ function sumDivisibleBy(n) {
 function sumDivisibleByWithFloor(n) {
   // Set target, < 1000
   const target = 999;
-  // Divide target by number to be divisible by, ignore remainder. Throw that shit away again.
+  // Divide target by number to be divisible by, ignore remainder.
   const p = Math.floor(target / n);
   // The sum is the divisible number n times target divided by n, named p, times p + 1, and divide that whole thing by 2.
   return Math.floor(n * (p * (p + 1)) / 2);
 }
 
 // Tests
-// Note: Even thought you're running sumDivisibleBy 3 times to get the answer it still outperforms iteration (in original) by many, many orders of magnitude.
+// Note: Even though you're running sumDivisibleBy 3 times to get the answer it still outperforms iteration (in original) by many, many orders of magnitude.
 console.log(original());
 console.log(sumDivisibleBy(3) + sumDivisibleBy(5) - sumDivisibleBy(15));
 
@@ -60,9 +60,9 @@ console.log(sumDivisibleBy(3) + sumDivisibleBy(5) - sumDivisibleBy(15));
 // I either never knew this formula or I forgot it long ago, along with chemistry and physics.
 // 2. To get the sum of numbers that are divisible by a number n from a consecutive series of numbers ending in x, the formula
 // is based on the one above for a complete consecutive series: p = x \ n, (n * (p * (p + 1)) / 2).
-// \ In this case means divide and discard the remainder. Wash your hands of that shit.
-// Now how did the person who figured this formula out figure it out? Why were they sitting around doing math? Were they bored before the internet? Shit was it Euler himself?
-// Tune in next time.
+// In this case means divide and discard the remainder.
+// Do you ever think about how the person who came up with this formula came up with this formula? Literally they were just sitting around doing math.
+// And then once you've wondered that, do you wonder how much less wondering there is because of all the distractions these days? I mean, I don't. I just wanted to know if you did.
 
 // Notes
 // https://stackoverflow.com/a/1435999/5293704
