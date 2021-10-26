@@ -39,7 +39,7 @@ npm i -g http-server
 cd to/the/folder/
 http-server
 ```
-Once the server is running open a browser and go to http://localhost:8080/problem-01/index.html. You will need to include the problem folder in the path because you started the server from the project root, which is normal, and you will need to include the filename (index.html). Even though it says it defaults to index.html it doesn't always work. Or ever. That's OK I love you turtle :turtle:
+Once the server is running open a browser and go to http://localhost:8080/problem-0001/index.html. You will need to include the problem folder in the path because you started the server from the project root, which is normal, and you will need to include the filename (index.html). Even though it says it defaults to index.html it doesn't always work. Or ever. That's OK I love you turtle :turtle:
 
 ## I got 751 Problems but Euler Ain't 1 Hit Me
 

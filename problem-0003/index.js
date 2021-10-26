@@ -28,8 +28,45 @@ function largestPrimeCrude(n) {
   return lastFactor;
 }
 
+// Tests
 console.log(largestPrimeCrude(13195));
 console.log(largestPrimeCrude(600851475143));
+
+// From overview, first improvement
+// This involves treating 2 separately since it's the only even prime and then continuing at 3 and incrementing by 2
+// 🥈 Second place
+function largestPrimeSecond(n) {
+  let lastFactor = 1;
+  // Deal with 2 separately
+  if (n % 2 === 0) {
+    n = n / 2;
+    lastFactor = 2;
+    while (n % 2 === 0) {
+      n = n / 2;
+    }
+  }
+  else {
+    lastFactor = 1;
+  }
+  // Continue at 3, incrementing by 2 - 3, 5, 7, etc.
+  let factor = 3;
+  while (n > 1) {
+    if (n % factor === 0) {
+      n = n / factor;
+      lastFactor = factor;
+      while (n % factor === 0) {
+        n = n / factor;
+      }
+    }
+    // Increment by 2
+    factor += 2;
+  }
+  return lastFactor;
+}
+
+// Tests
+console.log(largestPrimeSecond(13195));
+console.log(largestPrimeSecond(600851475143));
 
 // Original solution - brute force, so hot right now
 // Looks like I was cutting the given number in half, because obviously the largest prime would need to be half or less of the original.
