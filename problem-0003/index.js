@@ -37,7 +37,7 @@ console.log(largestPrimeCrude(600851475143));
 // 🥈 Second place
 function largestPrimeSecond(n) {
   let lastFactor = 1;
-  // Deal with 2 separately
+  // Evens - Deal with 2 separately because this will cover all even numbers.
   if (n % 2 === 0) {
     n = n / 2;
     lastFactor = 2;
@@ -48,7 +48,7 @@ function largestPrimeSecond(n) {
   else {
     lastFactor = 1;
   }
-  // Continue at 3, incrementing by 2 - 3, 5, 7, etc.
+  // Odds - Continue at 3, incrementing by 2, so 3, 5, 7, etc. so that we're now only dealing with the odd numbers.
   let factor = 3;
   while (n > 1) {
     if (n % factor === 0) {
@@ -94,3 +94,8 @@ console.log(largestPrimeSecond(600851475143));
 //     }
 //     return value > 1;
 // }
+
+// What I learned
+// Initially, I was definitely tackling the problem without much mathematical or factorial knowledge, iterating through by 1 and
+// checking for primacy until I could go no further - brute force.
+// I learned that a prime number over 2 has to be odd, even though I already knew this I never really used it in practice.
