@@ -68,6 +68,45 @@ function largestPrimeSecond(n) {
 console.log(largestPrimeSecond(13195));
 console.log(largestPrimeSecond(600851475143));
 
+// From overview, final, best solution
+// Every number n can at most have one prime factor greater than the square root of n
+// If factor exceeds this square root we know the remaining number is prime
+// 🥇 First place
+function largestPrime(n) {
+  let lastFactor = 1;
+  // Evens - Deal with 2 separately because this will cover all even numbers.
+  if (n % 2 === 0) {
+    lastFactor = 2;
+    n = n / 2;
+    while (n % 2 === 0) {
+      n = n / 2;
+    }
+  }
+  else {
+    lastFactor = 1;
+  }
+  // Odds - Continue at 3, incrementing by 2, so 3, 5, 7, etc. so that we're now only dealing with the odd numbers.
+  let factor = 3;
+  let maxFactor = Math.sqrt(n);
+  while (n > 1 && factor <= maxFactor) {
+    if (n % factor === 0) {
+      n = n / factor;
+      lastFactor = factor;
+      while (n % factor === 0) {
+        n = n / factor;
+      }
+      maxFactor = Math.sqrt(n);
+    }
+    factor += 2;
+  }
+  // Using a ternary here since we're not in a loop and it's much more readable.
+  return (n === 1) ? lastFactor : n;
+}
+
+// Tests
+console.log(largestPrime(13195));
+console.log(largestPrime(600851475143));
+
 // Original solution - brute force, so hot right now
 // Looks like I was cutting the given number in half, because obviously the largest prime would need to be half or less of the original.
 // Then I was looping from 2 to half, checking if each was a prime.
@@ -96,6 +135,14 @@ console.log(largestPrimeSecond(600851475143));
 // }
 
 // What I learned
-// Initially, I was definitely tackling the problem without much mathematical or factorial knowledge, iterating through by 1 and
-// checking for primacy until I could go no further - brute force.
-// I learned that a prime number over 2 has to be odd, even though I already knew this I never really used it in practice.
+// I learned that rather than just checking for a factor and then primacy, you can also apply the factorials to manipulate the original
+// number itself, making the speed orders of magnitude faster.
+// I learned that a prime number over 2 has to be odd, even though I already knew this I never really used it in practice. In practice,
+// in this situation, it means to only loop through odd numbers, only checking odds for potential factors, saving even more time.
+// I learned that every number can at most have one prime factor greater than the square root of itself.
+// I have to say, while I understand the math now, and obviously the code, and the concept, none of these things would ever have
+// occurred to me.
+
+// Notes
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/sqrt
+// https://bulma.io/
