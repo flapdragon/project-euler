@@ -48,3 +48,4 @@ Once the server is running open a browser and go to http://localhost:8080/proble
 |[Multiples of 3 or 5](https://projecteuler.net/problem=1)|[Solutions](problem-0001)|
 |[Even Fibonacci numbers](https://projecteuler.net/problem=2)|[Solutions](problem-0002)|
 |[Largest prime factor](https://projecteuler.net/problem=3)|[Solutions](problem-0003)|
+|[Largest palindrome product](https://projecteuler.net/problem=4)|[Solutions](problem-0004)|
