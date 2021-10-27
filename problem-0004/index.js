@@ -11,14 +11,14 @@
 // I'm not sure what the original reverse function was supposed to do, besides reversing the number obviously but it didn't do that once
 // converted to JavaScript, so I replaced it with a JavaScript one.
 
-// Solution 1 sub function for palindrome comparison
+// Solution 1 helper function for palindrome comparison
 function isPalindrome(n) {
   // Comparing this as a number, so it will ignore leading 0s. That doesn't matter in this case.
   const reversed = parseFloat(n.toString().split('').reverse().join(''));
   return n === reversed;
 }
 
-// Actual solution
+// Actual solution 1
 function findLargestPalindrome1() {
   let largestPalindrome = 0,
     a = 100,
@@ -39,8 +39,64 @@ function findLargestPalindrome1() {
 // Solution 1 Tests
 console.log(findLargestPalindrome1());
 
+// Solution 2
+// We are covering the same options multiple times with approach 1. `b = a;` fixes that.
+// No changes to isPalindrome helper function
+
+// Actual solution 2
+function findLargestPalindrome2() {
+  let largestPalindrome = 0,
+    a = 100,
+    b = 100;
+  while (a <= 999) {
+    b = a; // Now b = a instead of 100, so we're not covering the same combinations twice
+    while (b <= 999) {
+      if (isPalindrome(a * b) && a * b > largestPalindrome) {
+        largestPalindrome = a * b;
+      }
+      b++;
+    }
+    a++;
+  }
+  return largestPalindrome;
+}
+
+// Solution 3 Tests
+console.log(findLargestPalindrome2());
+
+// Solution 3
+// Next we should count down from the top 999 because the largest palindrom is likely to be closer to the top.
+// Also once we find the number we can break the loop there and not even have to iterate through all the possible combinations.
+// I am pretty proud to say that this optimization had occured to me in my original solution.
+// No changes to isPalindrome helper function
+
+// Actual solution 3
+function findLargestPalindrome3() {
+  let largestPalindrome = 0,
+    a = 999;
+  while (a >= 100) {
+    b = 999;
+    while (b >= a) {
+      if (a * b <= largestPalindrome) {
+        break; // Since a * b is always going to be too small
+      }
+      if (isPalindrome(a * b)) {
+        largestPalindrome = a * b;
+      }
+      b--;
+    }
+    a--;
+  }
+  return largestPalindrome;
+}
+
+// Solution 3 Tests
+console.log(findLargestPalindrome3());
+
 // Original solution
 // Doesn't crash the browser and it works. I bothered to make it actually return the answer but I didn't put it in a function.
+// I did do the optimization of going backwards from the top, something that in general in JavaScript is a performance technique but
+// in this case makes sense since we are looking for a higher number.
 // Lots of console.logs. I feel like I was pretty casual back then about my personal code. I didn't seem to give much thought to format
 // or whether anyone would ever look at it.
 // console.log("problem4");
