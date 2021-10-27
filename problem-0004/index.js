@@ -10,12 +10,15 @@
 // Then it checks to see if that product is a palindrome and if it's higher than the last palindrome.
 // I'm not sure what the original reverse function was supposed to do, besides reversing the number obviously but it didn't do that once
 // converted to JavaScript, so I replaced it with a JavaScript one.
+
+// Solution 1 sub function for palindrome comparison
 function isPalindrome(n) {
   // Comparing this as a number, so it will ignore leading 0s. That doesn't matter in this case.
   const reversed = parseFloat(n.toString().split('').reverse().join(''));
   return n === reversed;
 }
 
+// Actual solution
 function findLargestPalindrome1() {
   let largestPalindrome = 0,
     a = 100,
@@ -33,7 +36,7 @@ function findLargestPalindrome1() {
   return largestPalindrome;
 }
 
-// Tests
+// Solution 1 Tests
 console.log(findLargestPalindrome1());
 
 // Original solution
