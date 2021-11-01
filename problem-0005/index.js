@@ -45,9 +45,8 @@
 
 // Solution
 // 100% based on Euler's solution
-const smallestMultiple = (k) => {
-  // Hard coding list of primes for now.
-  const p = [ 2, 3, 5, 7, 11, 13, 17, 19 ];
+// I am abstracting out the k primes logic and passing in p to mirror Euler's solution as closely as possible.
+const smallestMultiple = (k, p) => {
   let N = 1,
     i = 0,
     check = true,
@@ -66,7 +65,42 @@ const smallestMultiple = (k) => {
     i++;
   }
   return N;
+};
+// Helper function to find primes less than or equal to k
+function getPrimes(k) {
+  let sieve = [],
+    i,
+    j,
+    primes = [];
+  for (let i = 2; i <= k; ++i) {
+    if (!sieve[i]) {
+      primes.push(i);
+      for (let j = i << 1; j <= k; j += i) {
+        sieve[j] = true;
+      }
+    }
+  }
+  return primes;
 }
 
 // Tests
-console.log(smallestMultiple(20));
+console.log(smallestMultiple(20, getPrimes(20)));
+
+// Performance
+// The version of smallestMultiple with the hard coded list of primes <= k was obviously the fastest, about 20% to
+// 30% faster than my original solution. The one that includes the prime finder getPrimes is clearly slower, but
+// it does make the solution an actual solution and it is still faster than the original by about 5% to 10%.
+// I thought it would be much faster because of the 2 helper functions.
+// As I increased k, the new solution, even with the prime finder helper function really began to be faster,
+// increasing to almost double the speed at k = 200.
+// https://jsben.ch/toQRq
+
+// WIL What I Learned
+// I am taking the time to understand the math all the way and that is making the code much easier.
+// I have yet to hit that point where I am implementing my math learnings on my own in the first pass solution but
+// I look forward to the day. 👀
+
+// Notes
+// Got primes solution from stack overflow. Lots of very smart answers here that don't return the right answer.
+// Simply modernized the top answer.
+//   https://stackoverflow.com/questions/11966520/how-to-find-prime-numbers-between-0-100
