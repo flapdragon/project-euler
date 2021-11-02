@@ -42,11 +42,4 @@ http-server
 Once the server is running open a browser and go to http://localhost:8080/problem-0001/index.html. You will need to include the problem folder in the path because you started the server from the project root, which is normal, and you will need to include the filename (index.html). Even though it says it defaults to index.html it doesn't always work. Or ever. That's OK I love you turtle :turtle:
 
 ## I got 751 Problems but Euler Ain't 1 Hit Me
-
-|Problem|Solution|
-|---|---|
-|[Multiples of 3 or 5](https://projecteuler.net/problem=1)|[Solutions](problem-0001)|
-|[Even Fibonacci numbers](https://projecteuler.net/problem=2)|[Solutions](problem-0002)|
-|[Largest prime factor](https://projecteuler.net/problem=3)|[Solutions](problem-0003)|
-|[Largest palindrome product](https://projecteuler.net/problem=4)|[Solutions](problem-0004)|
-|[Smallest multiple](https://projecteuler.net/problem=5)|[Solutions](problem-0005)|
+[Problems 1 - 50](problems/problems-0001-0050)
