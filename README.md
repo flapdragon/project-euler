@@ -29,7 +29,7 @@ node index.js
 ```
 
 ### Run it in the browser with http-server
-If you prefer a big blank browser tab and looking at its guts in the dev tools you can install [http-server](https://www.npmjs.com/package/http-server), or any other local web server, but I'm using the really convenient [http-server](https://raw.githubusercontent.com/http-party/http-server/master/screenshots/public.png) for this project because it's got a turtle. I recommend installing it globally which means it will be available anywhere credit cards are accepted.
+If you prefer a big sparse browser tab and looking at its guts in the dev tools instead you will still need to install [Node.js](https://nodejs.org/en/) but then you can install [http-server](https://www.npmjs.com/package/http-server), or any other local web server, but I'm using the really convenient [http-server](https://raw.githubusercontent.com/http-party/http-server/master/screenshots/public.png) for this project because it's got a turtle. I recommend installing it globally which means it will be available anywhere credit cards are accepted.
 
 ```
 npm install --global http-server
@@ -39,7 +39,7 @@ npm i -g http-server
 cd to/the/folder/
 http-server
 ```
-Once the server is running open a browser and go to http://localhost:8080/problem-0001/index.html. You will need to include the problem folder in the path because you started the server from the project root, which is normal, and you will need to include the filename (index.html). Even though it says it defaults to index.html it doesn't always work. Or ever. That's OK I love you turtle :turtle:
+Once the server is running open a browser and go to http://localhost:8080/problems/problems-0001-0050/problem-01/index.html. You will need to include the problem folder in the path because you started the server from the project root, which is normal, and you will need to include the filename (index.html). Even though it says it defaults to index.html it doesn't always work. Or ever. That's OK I love you turtle :turtle:
 
 ## I got 751 Problems but Euler Ain't 1 Hit Me
 [Problems 1 - 50](problems/problems-0001-0050)
