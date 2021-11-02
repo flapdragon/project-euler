@@ -10,3 +10,4 @@
 |4|[Largest palindrome product](https://projecteuler.net/problem=4)|[Solutions](problem-04)|
 |5|[Smallest multiple](https://projecteuler.net/problem=5)|[Solutions](problem-05)|
 |6|[Sum square difference](https://projecteuler.net/problem=6)|[Solutions](problem-06)|
+|7|[10001st prime](https://projecteuler.net/problem=7)|[Solutions](problem-07)|

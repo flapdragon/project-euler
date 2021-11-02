@@ -2,24 +2,32 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Smallest multiple</title>
+    <title>10001st prime</title>
     <link rel="icon" type="image/x-icon" href="../../../favicon.ico">
 </head>
 <style>
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css";
-/* Ghetto dark mode because I don't want to you to have to set up SASS */
+/* Interesting color */
 html, body {
-  background-color: #4a4a4a;
+  background-color: #104743;
   color: #ffffff;
 }
 .title, .subtitle {
+  color: #e7e5e6;
+}
+.subtitle strong {
   color: #ffffff;
+  font-size: 1.325rem;
 }
 a {
-  color: #42ecf5;
+  color: #ecf87f;
 }
 a:hover {
-  color: #bffdff;
+  color: #dba40e;
+}
+/* Custom for number */
+.natural-sums {
+  padding-left: 180px;
 }
 
 </style>
@@ -29,16 +37,16 @@ a:hover {
   <section class="hero">
     <div class="hero-body">
       <p class="title">
-        Smallest multiple
+        10001st prime
       </p>
       <p class="subtitle">
-        <a href="https://projecteuler.net/problem=5" target="_blank">Project Euler Problem 5</a>
+        <a href="https://projecteuler.net/problem=7" target="_blank">Project Euler Problem 7</a>
       </p>
       <h2 class="subtitle">
-        2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.
+        By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that the 6th prime is 13.
       </h2>
       <h2 class="subtitle">
-        What is the smallest positive number that is <em>evenly divisible</em> by all of the numbers from 1 to 20?
+        What is the 10,001st prime number?
       </h2>
     </div>
   </section>
