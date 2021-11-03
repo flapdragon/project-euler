@@ -151,17 +151,17 @@ function findGreatestProduct13V4(dig) {
     sliced = num1000.slice(i, i+dig);
     // productCurrent = sliced[0] * sliced[1] * sliced[2] * sliced[3];
     for (var j =0; j < dig; j++) {
-      productCurrent += sliced[j]; // This is an error, perhaps incomplete. This should be sumCurrent or something. I'm summing here ...
+      productCurrent += sliced[j]; // 🧯 This is an error, perhaps incomplete. This should be sumCurrent or something. I'm summing here, which was a theory I had that was actually incorrect.
     }
     if (productCurrent > productGreatest) {
       for (var j =0; j < dig; j++) {
-        productGreatest *= sliced[j]; // And then I'm just continuing here and multiplying.
+        productGreatest *= sliced[j]; // 🧯 And then I'm comparing the sum, incorrectly named, to the actual product. This was very incomplete.
       }
     }
     // console.log(sliced, productCurrent, productGreatest);
   }
   console.log(productGreatest);
 }
-findGreatestProduct13V1(13); // Also this is invoking the wrong function so I erroneously thought this was the fastest solution when in fact it didn't even work.
+findGreatestProduct13V1(13); // 🧯 Also this is invoking the wrong function so I erroneously thought this was the fastest solution when in fact it didn't even work.
 console.timeEnd("greatest product 13 method 4");
 // greatest product 13 method 4: 0.582ms
