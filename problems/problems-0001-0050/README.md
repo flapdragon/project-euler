@@ -11,3 +11,4 @@
 |5|[Smallest multiple](problem-05)|[Link](https://projecteuler.net/problem=5)|
 |6|[Sum square difference](problem-06)|[Link](https://projecteuler.net/problem=6)|
 |7|[10001st prime](problem-07)|[Link](https://projecteuler.net/problem=7)|
+|8|[Largest product in a series](problem-08)|[Link](https://projecteuler.net/problem=8)|
