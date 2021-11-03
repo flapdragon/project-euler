@@ -36,12 +36,22 @@ const n = "731671765313306249192251196744265747423553491949349698352031277450632
 // Also I ran tests regarding my sum is faster theory, that doing addition would be faster and should also indicate the
 // highest product. That was just wrong. Addition is definitely faster but doesn't indicate whether the product would be
 // higher or not.
-// On the JavaScript side, String.prototype.substring() is quite a bit faster than String.prototype.slice()
+// On the JavaScript side, String.prototype.substring() is quite a bit faster than String.prototype.slice() in this case.
+// 1 edge case might be that there is a zero in every group of adjacent 13 digits. In that case setting the productLargest
+// handles that case and the normal case for the given number.
+// Skipping ones theory
+// In this case with the given string, you could also check for 1s, because they don't increase the product at all.
+// However, the issue isn't as simple as with zero. If there is a 1 in every group of 13 then you will never calculate
+// the answer. So then it becomes an issue of counting ones and comparing the total in each group of 13 and likely
+// that is as much work as just finding the product in the first place.
+// In this case though, with this given number, it is faster to treat ones like zeros and skip them, by about twice as much.
+// The solution below works for any long number, but if you were looking to tweak as much as possible with only the
+// original number from Project Euler in mind, then simply change (sliced[j] == 0) to (sliced[j] == 0 || sliced[j] == 1).
 const findGreatestProduct = (adjacent, n) => {
   let len = n.length - (adjacent - 1),
     sliced,
     product = 1,
-    productLargest = 1;
+    productLargest = 0; // Needs to be 0
   loop1:
   for (let i = 0; i < len; i++) {
     sliced = n.substring(i, i + adjacent);
