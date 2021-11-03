@@ -2,12 +2,12 @@
 
 ## Problems 1 - 50
 
-| |Problem|Solution|
+| |Problem|Project Euler|
 |---|---|---|
-|1|[Multiples of 3 or 5](https://projecteuler.net/problem=1)|[Solutions](problem-01)|
-|2|[Even Fibonacci numbers](https://projecteuler.net/problem=2)|[Solutions](problem-02)|
-|3|[Largest prime factor](https://projecteuler.net/problem=3)|[Solutions](problem-03)|
-|4|[Largest palindrome product](https://projecteuler.net/problem=4)|[Solutions](problem-04)|
-|5|[Smallest multiple](https://projecteuler.net/problem=5)|[Solutions](problem-05)|
-|6|[Sum square difference](https://projecteuler.net/problem=6)|[Solutions](problem-06)|
-|7|[10001st prime](https://projecteuler.net/problem=7)|[Solutions](problem-07)|
+|1|[Multiples of 3 or 5](problem-01)|[Link](https://projecteuler.net/problem=1)|
+|2|[Even Fibonacci numbers](problem-02)|[Link](https://projecteuler.net/problem=2)|
+|3|[Largest prime factor](problem-03)|[Link](https://projecteuler.net/problem=3)|
+|4|[Largest palindrome product](problem-04)|[Link](https://projecteuler.net/problem=4)|
+|5|[Smallest multiple](problem-05)|[Link](https://projecteuler.net/problem=5)|
+|6|[Sum square difference](problem-06)|[Link](https://projecteuler.net/problem=6)|
+|7|[10001st prime](problem-07)|[Link](https://projecteuler.net/problem=7)|
