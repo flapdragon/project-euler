@@ -34,7 +34,7 @@ console.log(straighforward(1000));
 // This approach uses parameterization. It consistently runs under .1 ms at a+b+c=1000.
 const parameterization = function(s) {
   const s2 = s / 2,
-    mLimit = Math.sqrt(s2) - 1;
+    mLimit = Math.ceil(Math.sqrt(s2)) - 1;
   for (let m = 2; m <= mLimit; m++) {
     if (s2 % m === 0) {
       let sm = s2 / m;
