@@ -9,6 +9,7 @@
 // Find the product abc.
 
 // SOLUTION 1
+// 🥈 Second place
 // Project Euler's straightforward approach
 // This is an ieterative approach and runs on average about 1.5 seconds at s = 1000.
 const straighforward = function(s) {
@@ -26,6 +27,48 @@ const straighforward = function(s) {
 
 // Solution 1 Tests
 console.log(straighforward(1000));
+
+
+// SOLUTION 2
+// 🥇 First place
+// This approach uses parameterization. It consistently runs under .1 ms at a+b+c=1000.
+const parameterization = function(s) {
+  const s2 = s / 2,
+    mLimit = Math.sqrt(s2) - 1;
+  for (let m = 2; m <= mLimit; m++) {
+    if (s2 % m === 0) {
+      let sm = s2 / m;
+      while (sm % 2 === 0) {
+        sm /= 2;
+      }
+      let k = (m % 2 === 1) ? m + 2 : m + 1;
+      while (k < 2 * m && k <= sm) {
+        if (sm % k === 0 && gcd(k, m) === 1) {
+          const d = s2 / (k * m),
+            n = k - m;
+          const a = d * (m * m - n * n),
+            b = 2 * d * m * n,
+            c = d * (m * m + n * n);
+          return (a * b * c);
+        }
+        k += 2;
+      }
+    }
+  }
+};
+
+// Helper function for greatest common divisor, recursive.
+// TODO: performance test this function separately.
+// https://stackoverflow.com/questions/17445231/js-how-to-find-the-greatest-common-divisor
+function gcd(a, b) {
+  if (! b) {
+    return a;
+  }
+  return gcd(a % b);
+}
+
+// Solution 2 Tests
+console.log(parameterization(1000));
 
 
 // 🚀 PERFORMANCE
